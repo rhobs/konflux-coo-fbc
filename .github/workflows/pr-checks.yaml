@@ -1,0 +1,17 @@
+name: Pre-submit tests
+on:
+  pull_request:
+
+jobs:
+  generate:
+    name: Verify generated code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make --always-make generate && git diff --exit-code
+  lint:
+    name: Run linters
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make --always-make lint
