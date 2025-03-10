@@ -344,7 +344,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:40a1839f3777906b30762539dbde8a74443c97078edf01f58aaf7dd3fa6c6226
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:db6c409ade4b89dc3325cf7b107ba98da6a4bebaf7e45f0b448163371cc1f424
 name: cluster-observability-operator.v1.1.0
 package: cluster-observability-operator
 properties:
@@ -642,7 +642,7 @@ relatedImages:
   name: alertmanager
 - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-health-analyzer-0-4-rhel9@sha256:585557e4e9edd1897bddc55eed37b5d0bc2cfdacfddd5e3f2efbdc1b432785d7
   name: cluster-health-analyzer
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:40a1839f3777906b30762539dbde8a74443c97078edf01f58aaf7dd3fa6c6226
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:db6c409ade4b89dc3325cf7b107ba98da6a4bebaf7e45f0b448163371cc1f424
   name: ""
 - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-rhel8-operator@sha256:5adfa77852067d51faabc2d627b515927a665a26e8bfcd22933cf178508280cd
   name: cluster-observability-operator
@@ -652,7 +652,7 @@ relatedImages:
   name: ui-tracing-pf4
 - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/distributed-tracing-console-plugin-0-4-rhel9@sha256:9fc56cfa8100f61d2a14aadf566f543ead7fb2a3dd3fe1cecd0e1c4e6e4ae35b
   name: ui-tracing
-- image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/korrel8r-rhel8@sha256:049d39f7a89df1d1a15efcf057bd859b6cefc54b8f097679691d78c5e11a2496
+- image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/korrel8r-rhel8@sha256:c9eb87dfd4bc32a281ef281f8f95da8f352ad548fa1caf6bea1b969078c6638d
   name: korrel8r
 - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/logging-console-plugin-6-0-rhel9@sha256:2333fa22f29eb321fb7d621ec3c1122ee8db46eb2d71ceac4bee6d671b69d651
   name: ui-logging-pf4
@@ -668,7 +668,7 @@ relatedImages:
   name: prometheus-operator
 - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/prometheus-rhel9@sha256:d5dd39974d59ad0685360ceb5d269e47350bd077c4fdf23724d4901dc026af94
   name: prometheus
-- image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/thanos-rhel8@sha256:2526b5148fcdbdbc5a13c681763cf4610f672a17427a2cfd69f6734c7d70ff95
+- image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/thanos-rhel8@sha256:3880854acd5e56015eb2776a472e9cd5c9790bbe98eecd7d39c14ca9696b256c
   name: thanos
 - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/troubleshooting-panel-console-plugin-0-3-rhel9@sha256:a4746ce02c0ccd58bcf4da5afaa2175278663c1ae702ff22439ceb4aab160fed
   name: ui-troubleshooting

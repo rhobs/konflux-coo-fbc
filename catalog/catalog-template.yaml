@@ -21,6 +21,6 @@ entries:
   schema: olm.channel
 - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:89f1daf20f27e3191e5a21b0dced70f304b74c1042ed1ef394bbbbef18a170e3
   schema: olm.bundle
-- image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:40a1839f3777906b30762539dbde8a74443c97078edf01f58aaf7dd3fa6c6226
+- image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:db6c409ade4b89dc3325cf7b107ba98da6a4bebaf7e45f0b448163371cc1f424
   schema: olm.bundle
 schema: olm.template.basic
