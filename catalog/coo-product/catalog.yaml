@@ -344,7 +344,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:d6c852232982cd78b60aba8d23d6159c9d47f0144c60c072b8379376acb4b106
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:ccea239862add877eed54ec9b5f8448d6b936d278c48a775d66c106ab8741533
 name: cluster-observability-operator.v1.1.0
 package: cluster-observability-operator
 properties:
@@ -636,7 +636,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:d6c852232982cd78b60aba8d23d6159c9d47f0144c60c072b8379376acb4b106
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:ccea239862add877eed54ec9b5f8448d6b936d278c48a775d66c106ab8741533
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:e6ead0250e9face16634b3efc61290bd9b07b6b6e801b8acbe87a2b761871fc7
   name: alertmanager
@@ -650,7 +650,7 @@ relatedImages:
   name: ui-tracing-pf4
 - image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-0-4-rhel9@sha256:bb857a4d2b72abae86fef744ea8e74bc4c6c08aa8ec168df940587ae91055697
   name: ui-tracing
-- image: registry.redhat.io/cluster-observability-operator/korrel8r-rhel8@sha256:c9eb87dfd4bc32a281ef281f8f95da8f352ad548fa1caf6bea1b969078c6638d
+- image: registry.redhat.io/cluster-observability-operator/korrel8r-rhel8@sha256:617d3f3e2771a33b21b1b1a42546936721933b8e2b1c35efcc700e94ac8ee98d
   name: korrel8r
 - image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-0-rhel9@sha256:b7d7a3f344e8694e0c5738aeb1ef805700c6c1c61edd50934c830454111aa398
   name: ui-logging-pf4
