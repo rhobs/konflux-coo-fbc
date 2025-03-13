@@ -344,7 +344,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:7ba9948d8d0d4f0ab9e620c36a4d8a2027ab9e0126bef2b084f9f5d53bc56345
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:598ca79ace5539cf7b27ef4aa2c97a5c5a2b98135311a4dbf2c0eb1b34b33160
 name: cluster-observability-operator.v1.1.0
 package: cluster-observability-operator
 properties:
@@ -586,24 +586,21 @@ properties:
         kind: UIPlugin
         name: uiplugins.observability.openshift.io
         version: v1alpha1
-    description: |+
-      Cluster Observability Operator is a Go based Kubernetes operator to setup and manage highly available Monitoring stack using Prometheus, Alertmanager and Thanos Querier.
+    description: |-
+      Cluster Observability Operator is a Go based Kubernetes operator to easily setup and manage various observability tools.
       ### Supported Features
       - Setup multiple Highly Available Monitoring stack using Prometheus, Alertmanager and Thanos Querier
       - Customizable configuration for managing Prometheus deployments
       - Customizable configuration for managing Alertmanager deployments
       - Customizable configuration for managing Thanos Querier deployments
+      - Setup console plugins
+      - Setup korrel8r
+      - Setup Perses
+      - Setup Cluster Health Analyzer
       ### Documentation
-      - **[Documentation](https://github.com/rhobs/observability-operator/tree/main/docs)**
-      - **[Developer Docs](https://github.com/rhobs/observability-operator/blob/main/docs/developer.md)**
-      ### Contributing
-      **[See Contribution Guidelines](https://github.com/rhobs/observability-operator/blob/main/docs/developer.md#contributions)** to contribute to the project by
-      - Raising Bugs and Feature Requests
-      - Fixing Issues by opening a Pull Request
-      - Improving Documentation
+      - **[Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/cluster_observability_operator/index)**
       ###  License
       Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-
     displayName: Cluster Observability Operator
     installModes:
     - supported: false
@@ -636,7 +633,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:7ba9948d8d0d4f0ab9e620c36a4d8a2027ab9e0126bef2b084f9f5d53bc56345
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:598ca79ace5539cf7b27ef4aa2c97a5c5a2b98135311a4dbf2c0eb1b34b33160
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:e6ead0250e9face16634b3efc61290bd9b07b6b6e801b8acbe87a2b761871fc7
   name: alertmanager
@@ -656,7 +653,7 @@ relatedImages:
   name: ui-logging-pf4
 - image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-1-rhel9@sha256:ef913415222a8660e164818244ff8eb66d1edb16c7bd2abfc41d50e265035904
   name: ui-logging
-- image: 'registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-4-rhel9@sha256:27beeeb490ad0c351d9ebc30186f083240db849b116d09840d89c45096966777 '
+- image: 'registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-4-rhel9@sha256:1f7de303fdc2eff588161a51a189524d804aa6d1f7579d9d9211122816f1af9b '
   name: ui-monitoring
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-operator-admission-webhook-rhel8@sha256:1fe116ee0c136ce60db9b8bf333381f66da3a63876938da875d455ad3ef63398
   name: prometheus-operator-admission-webhook
@@ -664,13 +661,13 @@ relatedImages:
   name: prometheus-config-reloader
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel8-operator@sha256:9270933316734a55b95f762a22a7c5136d1514f06e654fef52944c5efe7cb924
   name: prometheus-operator
-- image: registry.redhat.io/cluster-observability-operator/perses-0-50-rhel8@sha256:a1fcbd459a52ac54b731edc4ed54b3daa28fb6c94563ca0e41bc01891db159cb
+- image: registry.redhat.io/cluster-observability-operator/perses-0-50-rhel8@sha256:9c5810df60a80ec03949698b15bdf42b4b95744f95d8dd7ad78f5794515742a4
   name: perses
-- image: registry.redhat.io/cluster-observability-operator/perses-operator-0-1-rhel8@sha256:cb5b334125b9679ac190c845020cd2596289cff0bfb3979ad031d5ee13a3bd81
+- image: registry.redhat.io/cluster-observability-operator/perses-operator-0-1-rhel8@sha256:1b7df6fe3f5d0f6938c7f9897ce8de5ffe58e3392e880189b02c84c5fccc52c3
   name: perses-operator
-- image: registry.redhat.io/cluster-observability-operator/prometheus-rhel9@sha256:e2fa6b5d731de3bce4ba3cab5f30ffbb057396941e760cd0136d2297dcf73777
+- image: registry.redhat.io/cluster-observability-operator/prometheus-rhel9@sha256:8a37f4342005cb6897d5b41108859cfbdea2bec61fe9ac4e3b05b65e5bae221f
   name: prometheus
-- image: registry.redhat.io/cluster-observability-operator/thanos-rhel8@sha256:3880854acd5e56015eb2776a472e9cd5c9790bbe98eecd7d39c14ca9696b256c
+- image: registry.redhat.io/cluster-observability-operator/thanos-rhel8@sha256:b33eb964aa06de4f58843faf3be7193ea7d70c337af727ac08b4026df1407359
   name: thanos
 - image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-0-4-rhel9@sha256:2b4400d50a3443925637ad506c0f13a96a4679c4530e8650583aba720ac6d927
   name: ui-troubleshooting
