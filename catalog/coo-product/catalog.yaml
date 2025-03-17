@@ -344,7 +344,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:57d7ce461a1051a8ad20e765bbdc533b3e1ad2f6d8e10a728491adf81772e410
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:e717712478e801794ea5eb191c26a1df5db23da603399bdb64a3b805efdc8b56
 name: cluster-observability-operator.v1.1.0
 package: cluster-observability-operator
 properties:
@@ -633,7 +633,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:57d7ce461a1051a8ad20e765bbdc533b3e1ad2f6d8e10a728491adf81772e410
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:e717712478e801794ea5eb191c26a1df5db23da603399bdb64a3b805efdc8b56
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:e6ead0250e9face16634b3efc61290bd9b07b6b6e801b8acbe87a2b761871fc7
   name: alertmanager
@@ -661,10 +661,10 @@ relatedImages:
   name: prometheus-config-reloader
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:1d504fa84c97a690bd3244f0809ade8e513ececbbdeda71a311e373d6f306e74
   name: prometheus-operator
+- image: registry.redhat.io/cluster-observability-operator/perses-0-1-rhel9-operator@sha256:53dfd71368c5105b8069331c2f73158f214c4c4934c0d652eb2ae3462c47d5ab
+  name: perses-operator
 - image: registry.redhat.io/cluster-observability-operator/perses-0-50-rhel9@sha256:693518152abaef50c8bfe105189b95682cb0ada05cc3c79e4e8d5b5150a6e5f4
   name: perses
-- image: registry.redhat.io/cluster-observability-operator/perses-operator-0-1-rhel9@sha256:53dfd71368c5105b8069331c2f73158f214c4c4934c0d652eb2ae3462c47d5ab
-  name: perses-operator
 - image: registry.redhat.io/cluster-observability-operator/prometheus-rhel9@sha256:8a37f4342005cb6897d5b41108859cfbdea2bec61fe9ac4e3b05b65e5bae221f
   name: prometheus
 - image: registry.redhat.io/cluster-observability-operator/thanos-rhel9@sha256:8519dfe78cec4e9b506141c49f5d9b4ae4368cc6ebb247c412b6235039ff0262
