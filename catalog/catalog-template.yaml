@@ -9,11 +9,11 @@ entries:
   name: cluster-observability-operator
   schema: olm.package
 - entries:
+  - name: cluster-observability-operator.v1.0.0
+    skipRange: '>=0.1.0 <1.0.0'
   - name: cluster-observability-operator.v1.1.0
     skipRange: '>=0.1.0 <1.1.0'
     replaces: cluster-observability-operator.v1.0.0
-  - name: cluster-observability-operator.v1.0.0
-    skipRange: '>=0.1.0 <1.0.0'
   # for future entries add replace directives so that older entries don't get
   # deleted. See https://olm.operatorframework.io/docs/concepts/olm-architecture/operator-catalog/creating-an-update-graph/#skiprange
   name: stable
