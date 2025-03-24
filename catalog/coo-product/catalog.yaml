@@ -315,7 +315,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:d4cbde2b47f7ec3f990c62f6d67c4a5cf23320bfac35c0e5d3293ced92625988
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:daecfb3d593c3cda69e84fb961e810a801c6629703e9dbad119961a33b47d311
 name: cluster-observability-operator.v1.1.0
 package: cluster-observability-operator
 properties:
@@ -445,7 +445,7 @@ properties:
       capabilities: Basic Install
       categories: Monitoring
       certified: "false"
-      containerImage: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:a7b0a2d72e566520b00735551ec67dc45bb14c037d751b2c56ab59d1d1e53091
+      containerImage: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:fdafc235cea47a28711d8cf36a8fed0c52b97bfe5c6e0a5e324bd106ae2db1e7
       createdAt: "2025-03-21T16:01:23Z"
       description: A Go based Kubernetes operator to setup and manage highly available
         Monitoring Stack using Prometheus, Alertmanager and Thanos Querier.
@@ -604,13 +604,13 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:d4cbde2b47f7ec3f990c62f6d67c4a5cf23320bfac35c0e5d3293ced92625988
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:daecfb3d593c3cda69e84fb961e810a801c6629703e9dbad119961a33b47d311
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:e4d18c77cfc8a639adb67e84d4b05f4dc3231861408b5459f539256bf72ce780
   name: alertmanager
 - image: registry.redhat.io/cluster-observability-operator/cluster-health-analyzer-0-4-rhel9@sha256:0f33d1c0ebc4e6531596c9392963bcd27a99317885da856441920b551e1b95d9
   name: cluster-health-analyzer
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:a7b0a2d72e566520b00735551ec67dc45bb14c037d751b2c56ab59d1d1e53091
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:fdafc235cea47a28711d8cf36a8fed0c52b97bfe5c6e0a5e324bd106ae2db1e7
   name: cluster-observability-operator
 - image: registry.redhat.io/cluster-observability-operator/dashboards-console-plugin-0-4-rhel9@sha256:e2d66c20fbb17b36bc8fedf29af0c0acadff8fb33d088cb4f628dca38d85015d
   name: ui-dashboards
@@ -632,9 +632,9 @@ relatedImages:
   name: prometheus-config-reloader
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:546903d63e23ba9c3c14a9e9e8bfbd6f2dda29015695b058f6ed4094d2d3d3e3
   name: prometheus-operator
-- image: registry.redhat.io/cluster-observability-operator/perses-0-1-rhel9-operator@sha256:e8d1024c23120573339ca6fac76f7e69cc209bca9bc4acd1fa555e4bb188faf2
+- image: registry.redhat.io/cluster-observability-operator/perses-0-1-rhel9-operator@sha256:e0fba57322b1943f92178596e011b08e2e5cee8413c1c7c060a852e92f54c8d7
   name: perses-operator
-- image: registry.redhat.io/cluster-observability-operator/perses-0-50-rhel9@sha256:8f190327e4268349cad6ab9755f3e6816be9857b46bff6020af8f45862ab0ebe
+- image: registry.redhat.io/cluster-observability-operator/perses-0-50-rhel9@sha256:b2a8493c9365e307dc49d428357d0d61e2429a84750cf8232e193281cf13ed43
   name: perses
 - image: registry.redhat.io/cluster-observability-operator/prometheus-rhel9@sha256:dbae5d557c8f431c0d6b43cd5321f0451529c6200f4e146717844d4affab156d
   name: prometheus
