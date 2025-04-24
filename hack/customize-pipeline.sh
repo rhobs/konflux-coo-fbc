@@ -7,7 +7,7 @@ do
     export trigger="event == \"$action\" && target_branch == \"$branch\" &&
         (\"$component-pull-request.yaml\".pathChanged() ||
         \"$component-push.yaml\".pathChanged() ||
-        \"catalog\".pathChanged() ||
+        \"catalog/***\".pathChanged() ||
         \"$dockerfile\".pathChanged())"
     echo "Processing file $file"
     yq -i '.metadata.annotations += {"pipelinesascode.tekton.dev/on-cel-expression": strenv(trigger)}' "$file"

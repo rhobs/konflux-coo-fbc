@@ -11,7 +11,7 @@ metadata:
       event == "push" && target_branch == "main" &&
               (".tekton/coo-fbc-v4-13-pull-request.yaml".pathChanged() ||
               ".tekton/coo-fbc-v4-13-push.yaml".pathChanged() ||
-              "catalog".pathChanged() ||
+              "catalog/***".pathChanged() ||
               "Dockerfile-4.13.catalog".pathChanged())
   creationTimestamp: null
   labels:
