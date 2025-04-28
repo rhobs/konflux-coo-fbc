@@ -646,7 +646,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:b73551fd5d376f5f4b6f1d5127b3122f5786cc15d055bb6f712c953efbaf8d98
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:77146fd107d91fdd4f19f9453edc23edc3c3280f0e0a81adefd276ba5cdbcb84
 name: cluster-observability-operator.v1.1.1
 package: cluster-observability-operator
 properties:
@@ -935,7 +935,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:b73551fd5d376f5f4b6f1d5127b3122f5786cc15d055bb6f712c953efbaf8d98
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:77146fd107d91fdd4f19f9453edc23edc3c3280f0e0a81adefd276ba5cdbcb84
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:e0193ac820e502deb7041bdbfc3f53071f6c529c9580d7d5a164f6025a96dd69
   name: alertmanager
@@ -971,6 +971,6 @@ relatedImages:
   name: prometheus
 - image: registry.redhat.io/cluster-observability-operator/thanos-rhel9@sha256:b34dec6dbbe03fc1aaf2a1b5241b1e7a9d4dee5cc9542e7209b7d90c0a557eb1
   name: thanos
-- image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-0-4-rhel9@sha256:64eb2ba56a1ff4fbf370b863709f3695d65885e997adc00e1191897b1b9e4a19
+- image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-0-4-rhel9@sha256:ef570316c8519aa570478b7f0a4396592eff24f49e085f0a5e104ff88b3a4cf9
   name: ui-troubleshooting
 schema: olm.bundle
