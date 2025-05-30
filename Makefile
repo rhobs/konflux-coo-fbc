@@ -2,7 +2,6 @@
 TOOLS_DIR = $(shell pwd)/.tmp/bin
 OPM=$(TOOLS_DIR)/opm
 OPM_VERSION = v1.47.0
-CONTAINER_RUNTIME := $(shell command -v podman 2> /dev/null || echo docker)
 
 .PHONY: generate
 generate: generate-catalog
