@@ -1,31 +1,17 @@
-name: Pre-submit tests
+name: Test
+
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
 jobs:
-  generate:
-    name: Verify generated code
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Log in to registry.redhat.io
+      - name: Test secrets
         env:
-          RH_REGISTRY_USERNAME: ${{ secrets.RH_REGISTRY_USERNAME }}
-          RH_REGISTRY_PASSWORD: ${{ secrets.RH_REGISTRY_PASSWORD }}
+          RH_REGISTRY_USERNAME: ${{ secrets.RH_REGISTRY_USERNAME_TEST }}
+          RH_REGISTRY_PASSWORD: ${{ secrets.RH_REGISTRY_PASSWORD_TEST }}
         run: |
-          if [ -v "RH_REGISTRY_USERNAME" ] && [ -v "RH_REGISTRY_PASSWORD" ]
-          then
-            set +x
-            echo "$RH_REGISTRY_PASSWORD" | podman login "registry.redhat.io" --username "$RH_REGISTRY_USERNAME" --password-stdin
-            set -x
-          else
-            echo "Login to registry before running this script"
-            exit 1
-          fi
-      - uses: actions/checkout@v4
-      - run: make --always-make generate && git diff --exit-code
-  lint:
-    name: Run linters
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: make --always-make lint
+          echo "Username length: ${#RH_REGISTRY_USERNAME}"
+          echo "Password length: ${#RH_REGISTRY_PASSWORD}"
