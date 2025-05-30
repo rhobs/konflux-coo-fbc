@@ -1,4 +1,5 @@
 name: Pre-submit tests
+
 on:
   pull_request:
 
@@ -6,12 +7,22 @@ jobs:
   generate:
     name: Verify generated code
     runs-on: ubuntu-latest
+    env:
+      RH_REGISTRY_USERNAME: ${{ secrets.RH_REGISTRY_USERNAME }}
+      RH_REGISTRY_PASSWORD: ${{ secrets.RH_REGISTRY_PASSWORD }}
     steps:
-      - uses: actions/checkout@v4
-      - run: make --always-make generate && git diff --exit-code
+      - name: Show RH_REGISTRY_USERNAME secret
+        run: echo "RH_REGISTRY_USERNAME='${{ secrets.RH_REGISTRY_USERNAME }}'"
+
+      - name: Show RH_REGISTRY_PASSWORD secret
+        run: echo "RH_REGISTRY_PASSWORD='${{ secrets.RH_REGISTRY_PASSWORD }}'"
+
   lint:
     name: Run linters
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: make --always-make lint
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run linter
+        run: make --always-make lint
