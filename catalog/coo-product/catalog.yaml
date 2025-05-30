@@ -16,6 +16,9 @@ entries:
 - name: cluster-observability-operator.v1.1.1
   replaces: cluster-observability-operator.v1.1.0
   skipRange: '>=0.1.0 <1.1.1'
+- name: cluster-observability-operator.v1.2.0
+  replaces: cluster-observability-operator.v1.1.1
+  skipRange: '>=0.1.0 <1.2.0'
 name: stable
 package: cluster-observability-operator
 schema: olm.channel
