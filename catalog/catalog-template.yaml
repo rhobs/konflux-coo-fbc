@@ -19,6 +19,9 @@ entries:
       - name: cluster-observability-operator.v1.2.0
         skipRange: '>=0.1.0 <1.2.0'
         replaces: cluster-observability-operator.v1.1.1
+      - name: cluster-observability-operator.v1.2.1
+        skipRange: '>=0.1.0 <1.2.1'
+        replaces: cluster-observability-operator.v1.2.0
     # for future entries add replace directives so that older entries don't get 
     # deleted. See https://olm.operatorframework.io/docs/concepts/olm-architecture/operator-catalog/creating-an-update-graph/#skiprange
     name: stable
@@ -30,6 +33,6 @@ entries:
     schema: olm.bundle
   - image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:0a819f7e634e34e4418e54a2fae0d4f1a4ef77a58bae1350695700272113e282
     schema: olm.bundle
-  - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:830a8b81e197a2aa81099dfb252a2edd1c113cac5ba829ef5087bcf930cbe446
+  - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:3509dccf7ace97a93f89e89f0afb15491028513453bf6a86cb532ea9add027ea
     schema: olm.bundle
 schema: olm.template.basic
