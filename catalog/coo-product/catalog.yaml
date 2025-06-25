@@ -19,6 +19,9 @@ entries:
 - name: cluster-observability-operator.v1.2.0
   replaces: cluster-observability-operator.v1.1.1
   skipRange: '>=0.1.0 <1.2.0'
+- name: cluster-observability-operator.v1.2.1
+  replaces: cluster-observability-operator.v1.2.0
+  skipRange: '>=0.1.0 <1.2.1'
 name: stable
 package: cluster-observability-operator
 schema: olm.channel
@@ -1267,12 +1270,12 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:830a8b81e197a2aa81099dfb252a2edd1c113cac5ba829ef5087bcf930cbe446
-  name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:f6042ecfcf5336294843b8460b3d212592e145e70693a885950ff0464a7d81f8
   name: alertmanager
 - image: registry.redhat.io/cluster-observability-operator/cluster-health-analyzer-rhel9@sha256:498c145dbf8921b1db6d427560b4e3bfbcb4f2565c67449f27c22e5dd2b8c786
   name: cluster-health-analyzer
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:830a8b81e197a2aa81099dfb252a2edd1c113cac5ba829ef5087bcf930cbe446
+  name: ""
 - image: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:7c4e75bb3a36645106144d5e16a8551455ea08f8ce9c821aa2f0326f107449e8
   name: cluster-observability-operator
 - image: registry.redhat.io/cluster-observability-operator/dashboards-console-plugin-0-4-rhel9@sha256:378f7f7d2cb824aaedf5465f60b9e65e8a080424ad4595fafe5ae3661272a101
@@ -1308,5 +1311,346 @@ relatedImages:
 - image: registry.redhat.io/cluster-observability-operator/thanos-rhel9@sha256:6a6662266035d526af779794add0ebb39b64dbda426642d32675665dbee24fa9
   name: thanos
 - image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-0-4-rhel9@sha256:cf3bb379d7146b4cc42bc9ea5a26eee453501a6a1b158707fceb9784fc6cf57e
+  name: ui-troubleshooting
+schema: olm.bundle
+---
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:e108faaab4d06cd2b41877690d5ec95f373be0d673fe8f08619db2bcd36a05a6
+name: cluster-observability-operator.v1.2.1
+package: cluster-observability-operator
+properties:
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: Alertmanager
+    version: v1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: AlertmanagerConfig
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: MonitoringStack
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: PodMonitor
+    version: v1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: Probe
+    version: v1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: Prometheus
+    version: v1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: PrometheusAgent
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: PrometheusRule
+    version: v1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: ScrapeConfig
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: ServiceMonitor
+    version: v1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: ThanosQuerier
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: monitoring.rhobs
+    kind: ThanosRuler
+    version: v1
+- type: olm.gvk
+  value:
+    group: observability.openshift.io
+    kind: UIPlugin
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: perses.dev
+    kind: Perses
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: perses.dev
+    kind: PersesDashboard
+    version: v1alpha1
+- type: olm.gvk
+  value:
+    group: perses.dev
+    kind: PersesDatasource
+    version: v1alpha1
+- type: olm.package
+  value:
+    packageName: cluster-observability-operator
+    version: 1.2.1
+- type: olm.csv.metadata
+  value:
+    annotations:
+      alm-examples: |-
+        [
+          {
+            "apiVersion": "monitoring.rhobs/v1alpha1",
+            "kind": "MonitoringStack",
+            "metadata": {
+              "labels": {
+                "mso": "example"
+              },
+              "name": "sample-monitoring-stack"
+            },
+            "spec": {
+              "logLevel": "debug",
+              "resourceSelector": {
+                "matchLabels": {
+                  "app": "demo"
+                }
+              },
+              "retention": "1d"
+            }
+          },
+          {
+            "apiVersion": "monitoring.rhobs/v1alpha1",
+            "kind": "ThanosQuerier",
+            "metadata": {
+              "name": "example-thanos"
+            },
+            "spec": {
+              "selector": {
+                "matchLabels": {
+                  "mso": "example"
+                }
+              }
+            }
+          }
+        ]
+      capabilities: Basic Install
+      categories: Monitoring
+      certified: "false"
+      containerImage: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:a33cdedc23e918884ddac6ed4f2307568fc7d6b260ea73195c716cc9778824d3
+      createdAt: "2025-06-24T11:30:26Z"
+      description: A Go based Kubernetes operator to setup and manage highly available
+        Monitoring Stack using Prometheus, Alertmanager and Thanos Querier.
+      features.operators.openshift.io/cnf: "false"
+      features.operators.openshift.io/cni: "false"
+      features.operators.openshift.io/csi: "false"
+      features.operators.openshift.io/disconnected: "true"
+      features.operators.openshift.io/fips-compliant: "false"
+      features.operators.openshift.io/proxy-aware: "false"
+      features.operators.openshift.io/tls-profiles: "false"
+      features.operators.openshift.io/token-auth-aws: "false"
+      features.operators.openshift.io/token-auth-azure: "false"
+      features.operators.openshift.io/token-auth-gcp: "false"
+      olm.skipRange: '>=..0 <1.2.1'
+      operatorframework.io/cluster-monitoring: "true"
+      operatorframework.io/suggested-namespace: openshift-cluster-observability-operator
+      operators.openshift.io/valid-subscription: '["OpenShift Kubernetes Engine",
+        "OpenShift Container Platform", "OpenShift Platform Plus"]'
+      operators.operatorframework.io/builder: operator-sdk-v1.37.0
+      operators.operatorframework.io/internal-objects: |-
+        [
+          "prometheuses.monitoring.rhobs",
+          "alertmanagers.monitoring.rhobs",
+          "thanosrulers.monitoring.rhobs",
+          "prometheusagents.monitoring.rhobs",
+          "perses.perses.dev"
+        ]
+      operators.operatorframework.io/project_layout: unknown
+      repository: https://github.com/rhobs/observability-operator
+      support: Cluster Observability (https://issues.redhat.com/projects/COO/)
+    apiServiceDefinitions: {}
+    crdDescriptions:
+      owned:
+      - description: AlertmanagerConfig configures the Prometheus Alertmanager, specifying
+          how alerts should be grouped, inhibited and notified to external systems
+        displayName: AlertmanagerConfig
+        kind: AlertmanagerConfig
+        name: alertmanagerconfigs.monitoring.rhobs
+        version: v1alpha1
+      - description: Alertmanager describes an Alertmanager cluster
+        displayName: Alertmanager
+        kind: Alertmanager
+        name: alertmanagers.monitoring.rhobs
+        version: v1
+      - description: MonitoringStack is the Schema for the monitoringstacks API
+        displayName: MonitoringStack
+        kind: MonitoringStack
+        name: monitoringstacks.monitoring.rhobs
+        version: v1alpha1
+      - description: Perses is the Schema for the perses API
+        displayName: Perses
+        kind: Perses
+        name: perses.perses.dev
+        version: v1alpha1
+      - description: A Perses Dashboard
+        displayName: Perses Dashboard
+        kind: PersesDashboard
+        name: persesdashboards.perses.dev
+        version: v1alpha1
+      - description: A Perses Datasource
+        displayName: Perses Datasource
+        kind: PersesDatasource
+        name: persesdatasources.perses.dev
+        version: v1alpha1
+      - description: PodMonitor defines monitoring for a set of pods
+        displayName: PodMonitor
+        kind: PodMonitor
+        name: podmonitors.monitoring.rhobs
+        version: v1
+      - description: Probe defines monitoring for a set of static targets or ingresses
+        displayName: Probe
+        kind: Probe
+        name: probes.monitoring.rhobs
+        version: v1
+      - description: PrometheusAgent defines a Prometheus agent deployment
+        displayName: PrometheusAgent
+        kind: PrometheusAgent
+        name: prometheusagents.monitoring.rhobs
+        version: v1alpha1
+      - description: Prometheus defines a Prometheus deployment
+        displayName: Prometheus
+        kind: Prometheus
+        name: prometheuses.monitoring.rhobs
+        version: v1
+      - description: PrometheusRule defines recording and alerting rules for a Prometheus
+          instance
+        displayName: PrometheusRule
+        kind: PrometheusRule
+        name: prometheusrules.monitoring.rhobs
+        version: v1
+      - description: ScrapeConfig defines a namespaced Prometheus scrape_config to
+          be aggregated across multiple namespaces into the Prometheus configuration
+        displayName: ScrapeConfig
+        kind: ScrapeConfig
+        name: scrapeconfigs.monitoring.rhobs
+        version: v1alpha1
+      - description: ServiceMonitor defines monitoring for a set of services
+        displayName: ServiceMonitor
+        kind: ServiceMonitor
+        name: servicemonitors.monitoring.rhobs
+        version: v1
+      - description: ThanosQuerier outlines the Thanos querier components, managed
+          by this stack
+        displayName: ThanosQuerier
+        kind: ThanosQuerier
+        name: thanosqueriers.monitoring.rhobs
+        version: v1alpha1
+      - description: ThanosRuler defines a ThanosRuler deployment
+        displayName: ThanosRuler
+        kind: ThanosRuler
+        name: thanosrulers.monitoring.rhobs
+        version: v1
+      - description: UIPlugin defines a console plugin for observability
+        displayName: UIPlugin
+        kind: UIPlugin
+        name: uiplugins.observability.openshift.io
+        version: v1alpha1
+    description: |-
+      Cluster Observability Operator is a Go based Kubernetes operator to easily setup and manage various observability tools.
+      ### Supported Features
+      - Setup multiple Highly Available Monitoring stack using Prometheus, Alertmanager and Thanos Querier
+      - Customizable configuration for managing Prometheus deployments
+      - Customizable configuration for managing Alertmanager deployments
+      - Customizable configuration for managing Thanos Querier deployments
+      - Setup console plugins
+      - Setup korrel8r
+      - Setup Perses
+      - Setup Cluster Health Analyzer
+      ### Documentation
+      - **[Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/cluster_observability_operator/index)**
+      ###  License
+      Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+    displayName: Cluster Observability Operator
+    installModes:
+    - supported: false
+      type: OwnNamespace
+    - supported: false
+      type: SingleNamespace
+    - supported: false
+      type: MultiNamespace
+    - supported: true
+      type: AllNamespaces
+    keywords:
+    - observability
+    - monitoring
+    - prometheus
+    - thanos
+    labels:
+      operatorframework.io/arch.amd64: supported
+      operatorframework.io/arch.arm64: supported
+      operatorframework.io/arch.ppc64le: supported
+      operatorframework.io/arch.s390x: supported
+    links:
+    - name: GitHub
+      url: https://github.com/rhobs/observability-operator
+    maintainers:
+    - email: jfajersk@redhat.com
+      name: Jan Fajerski
+    - email: spasquie@redhat.com
+      name: Simon Pasquier
+    maturity: alpha
+    provider:
+      name: Red Hat
+relatedImages:
+- image: quay.io/openshift-observability-ui/perses-operator:v0.2-go-1.23
+  name: ""
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:e108faaab4d06cd2b41877690d5ec95f373be0d673fe8f08619db2bcd36a05a6
+  name: ""
+- image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:cf5219cd73752b86a48d2556f12cec025cad21e315498373f55f5def54806809
+  name: alertmanager
+- image: registry.redhat.io/cluster-observability-operator/cluster-health-analyzer-rhel9@sha256:60848cc9b91d33b85f0aa320806e993c43244aa234251ba5b688aa78497b5807
+  name: cluster-health-analyzer
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:a33cdedc23e918884ddac6ed4f2307568fc7d6b260ea73195c716cc9778824d3
+  name: cluster-observability-operator
+- image: registry.redhat.io/cluster-observability-operator/dashboards-console-plugin-0-4-rhel9@sha256:35cd4e289ba45230b3a878aef13479dcb5816b76a0599f6bcff1232f73414da1
+  name: ui-dashboards
+- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-0-3-rhel9@sha256:ac4e4d36d61aaa5f56ec810418946297a2e87dc6734dd4d0ec461d941eaca311
+  name: ui-tracing-pf4
+- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-0-4-rhel9@sha256:6460f2e5c9f446b09339057a1294e1bc37ec008a1537b3a8b8470106e64c14a3
+  name: ui-tracing-pf5
+- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-1-0-rhel9@sha256:bff5e20a3ea596639a3b31000866e81d004ae71f69e8958162a8a2346f1b0324
+  name: ui-tracing
+- image: registry.redhat.io/cluster-observability-operator/korrel8r-rhel9@sha256:29df824eeaf4c9b996e1678d095e414ecbaaddc75545023096609f2c6615140f
+  name: korrel8r
+- image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-0-rhel9@sha256:683ef45de96d371d066b3ee79b81a3e62c3f53f97a68389c11c2f0836b190f35
+  name: ui-logging-pf4
+- image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-1-rhel9@sha256:c8e22214fee1882f91a3c83eec3eb28ffbc01aa72ec7f909cbcd5a2bab4c36ae
+  name: ui-logging
+- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-4-rhel9@sha256:301b5402372f9744aefabdae8eca932232dd4b73b7ffefe9d8118a59aee5297d
+  name: ui-monitoring-pf5
+- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-5-rhel9@sha256:4125f86fb2290afed4617c5bc80baf60c7d1f8c600bf9e13e1ccbc4b79960840
+  name: ui-monitoring
+- image: registry.redhat.io/cluster-observability-operator/obo-prometheus-operator-admission-webhook-rhel9@sha256:519cb942bc34b1a45ce89dc8dba665111eb0de069f8b5b65be65d886f6241d00
+  name: prometheus-operator-admission-webhook
+- image: registry.redhat.io/cluster-observability-operator/obo-prometheus-operator-prometheus-config-reloader-rhel9@sha256:b4036ba16b7ee035524399b4bee5eaf746659bbadac2fc5fe7db416e4256b7e8
+  name: prometheus-config-reloader
+- image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:c4b4488665e8db79c12bbe0b816c96d3c7df2368134eef9d3b24e35600072222
+  name: prometheus-operator
+- image: registry.redhat.io/cluster-observability-operator/perses-0-1-rhel9-operator@sha256:7a8d2faa85b1dac8c36e452401613f055c75e54f596dfe71731b3242a09bb7ab
+  name: perses-operator
+- image: registry.redhat.io/cluster-observability-operator/perses-0-50-rhel9@sha256:2744ada73130f38723cebc047c63d76a00d2505ef5271e7406fe1b74097eaac0
+  name: perses
+- image: registry.redhat.io/cluster-observability-operator/prometheus-rhel9@sha256:832bf7a25586747d20e0cca53f4fc0a0587b0fe89df01968b1edef641e7eac67
+  name: prometheus
+- image: registry.redhat.io/cluster-observability-operator/thanos-rhel9@sha256:d8a1144c13d022293bd20481982e282c74a03d694f47f6b04bbc3723928113d6
+  name: thanos
+- image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-0-4-rhel9@sha256:fda8a4537c5ee8bd5f4d24aa1a84c549d51836a129b1e87b8afcd95d31e7f932
   name: ui-troubleshooting
 schema: olm.bundle
