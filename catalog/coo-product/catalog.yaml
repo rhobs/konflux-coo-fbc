@@ -1314,7 +1314,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:62773c80e4463ef8c59551a6d8faec51f330ce2beed97634d1c71848379debda
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:af15741f8b090da136441e1c3aa0f5fa9a3926c5da67ad0b0bd58c86d5a0dcab
 name: cluster-observability-operator.v1.2.1
 package: cluster-observability-operator
 properties:
@@ -1609,9 +1609,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: quay.io/openshift-observability-ui/perses-operator:v0.2-go-1.23
-  name: ""
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:62773c80e4463ef8c59551a6d8faec51f330ce2beed97634d1c71848379debda
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:af15741f8b090da136441e1c3aa0f5fa9a3926c5da67ad0b0bd58c86d5a0dcab
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:cf5219cd73752b86a48d2556f12cec025cad21e315498373f55f5def54806809
   name: alertmanager
