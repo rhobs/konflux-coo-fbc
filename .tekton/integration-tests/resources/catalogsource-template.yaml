@@ -1,0 +1,22 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: catalogsource-template
+parameters:
+- name: FBC_IMAGE
+  description: "Description of the parameter"
+  value: "default-value"
+  required: true
+objects:
+- apiVersion: operators.coreos.com/v1alpha1
+  kind: CatalogSource
+  metadata:
+    name: coo
+    namespace: openshift-marketplace
+  spec:
+    sourceType: grpc
+    image: ${FBC_IMAGE}
+    publisher: Openshift QE
+    updateStrategy:
+      registryPoll:
+        interval: 10m0s
