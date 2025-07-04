@@ -1314,7 +1314,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:12ceef3e672c08c6f2f5e98cbd787dfb2037b0bdbb7998711e58d6fd3a839159
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:4ce1f9eb222a8cfc871b398ad88193057bcb06d1cb4d489de6142a089a5f1499
 name: cluster-observability-operator.v1.2.1
 package: cluster-observability-operator
 properties:
@@ -1444,7 +1444,7 @@ properties:
       capabilities: Basic Install
       categories: Monitoring
       certified: "false"
-      containerImage: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:c98dc7497e0731564e008c5f7fa7f218784fb57d0c83fdad4c033525e4116d87
+      containerImage: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:10d448296a1785f1cbcc3e49b560c8a88dc5ac22816b4827d0e2c77e95aabfad
       createdAt: "2025-06-24T11:30:26Z"
       description: A Go based Kubernetes operator to setup and manage highly available
         Monitoring Stack using Prometheus, Alertmanager and Thanos Querier.
@@ -1609,31 +1609,31 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:12ceef3e672c08c6f2f5e98cbd787dfb2037b0bdbb7998711e58d6fd3a839159
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:4ce1f9eb222a8cfc871b398ad88193057bcb06d1cb4d489de6142a089a5f1499
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:6427bcef998cc744a06dc483f2f117b721a1abfd40309abb576a373e42961b6d
   name: alertmanager
 - image: registry.redhat.io/cluster-observability-operator/cluster-health-analyzer-rhel9@sha256:7fa859bcb0fdb3f69c2e37a8186271ce5800c2a3d48980f94528d49c18e9d2b2
   name: cluster-health-analyzer
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:c98dc7497e0731564e008c5f7fa7f218784fb57d0c83fdad4c033525e4116d87
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:10d448296a1785f1cbcc3e49b560c8a88dc5ac22816b4827d0e2c77e95aabfad
   name: cluster-observability-operator
-- image: registry.redhat.io/cluster-observability-operator/dashboards-console-plugin-0-4-rhel9@sha256:0a077a8947094ca98f9cf832e2cebe1ba896e0f0cb532ecacb06acb47631bf96
+- image: registry.redhat.io/cluster-observability-operator/dashboards-console-plugin-0-4-rhel9@sha256:504c579d9b5d59a21f156f9314e554a1332e8b22a361a8315bd18e6e6d057bc8
   name: ui-dashboards
-- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-0-3-rhel9@sha256:57214648e98580a83091dc22aa25ba734942bdf4e3329ac9c41ef2643a45cf58
+- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-0-3-rhel9@sha256:c226139cde45c0fe089abaa189fbf9908f329341eb9178f020fc584fc5148b98
   name: ui-tracing-pf4
-- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-0-4-rhel9@sha256:fb7c02ef8765f54ee02e93be829dee69c5530987aca76c5f6aa28a229766fa4d
+- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-0-4-rhel9@sha256:15dd980722ea7c64cb6809ca91d3c0624b55be48bfacbf3a503bfbd5aa3895d6
   name: ui-tracing-pf5
-- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-1-0-rhel9@sha256:435dac820e674152026b172858490cac696a0b41f8d81179a902d0ba18ab4fca
+- image: registry.redhat.io/cluster-observability-operator/distributed-tracing-console-plugin-1-0-rhel9@sha256:54009f9497631f78917b1dc4ccf1ff8c8318b77a52240893faf75f73b9236a0c
   name: ui-tracing
 - image: registry.redhat.io/cluster-observability-operator/korrel8r-rhel9@sha256:7f20709f7facd942c073edbfe691a82188e7dace92896a8e859089638ad70dfc
   name: korrel8r
-- image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-0-rhel9@sha256:00daf91dd11afb4eeac07047da44d67d102b8742606a85ba4e07396952471c26
+- image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-0-rhel9@sha256:2089033cce6f9fc46a50578c8d2ac871e9b62b60c8b00121e09e7ba02dc9a830
   name: ui-logging-pf4
-- image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-1-rhel9@sha256:a38e57b28c23f334dc11b07aebd4d64bae5af56f2d7e500ddbb0f897c7092263
+- image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-6-1-rhel9@sha256:cf4f2835f7343acc529c2e7b98aacb8abf26df91385e6a02aea5603c69431876
   name: ui-logging
-- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-4-rhel9@sha256:adaaa96b87163b255556527e4a8a696f8bb88d8996176b0d49d715803da2f663
+- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-4-rhel9@sha256:111f86f70e87dcbd78f75654937a01adc087d142eda4f11fcd1e37aa3c097148
   name: ui-monitoring-pf5
-- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-5-rhel9@sha256:5c5c665564f685e936681eb31f2c63db4a4567492c2622545875e41d9a9bb05a
+- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-0-5-rhel9@sha256:f63e4903f631245423924ad5f749ecc5ca8ec9f99fecb3a6f769a6ebf3c8dd82
   name: ui-monitoring
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-operator-admission-webhook-rhel9@sha256:153ef33ff2f47d2067e55f0bc897cc816b1fcf764c5fb74a440e557621c2c129
   name: prometheus-operator-admission-webhook
@@ -1641,7 +1641,7 @@ relatedImages:
   name: prometheus-config-reloader
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:77461d8a0a2b364fa7ea3a386e42dfbe71e84ca083560ce86c8e86c2897dede9
   name: prometheus-operator
-- image: registry.redhat.io/cluster-observability-operator/perses-0-1-rhel9-operator@sha256:4e256e873f2719a1db359dc1ba50cb5439642c36354617d1a10ddfad5c0078f4
+- image: registry.redhat.io/cluster-observability-operator/perses-0-1-rhel9-operator@sha256:c8df6bfef57d4982ea5aca80067a221f20aa32f218b39b05c31b02975c83a516
   name: perses-operator
 - image: registry.redhat.io/cluster-observability-operator/perses-0-50-rhel9@sha256:4ed85ecdf0b99452b66e8c709790c5baa541748a636d1c02de49655ba6f2dd0e
   name: perses
@@ -1649,6 +1649,6 @@ relatedImages:
   name: prometheus
 - image: registry.redhat.io/cluster-observability-operator/thanos-rhel9@sha256:6f95955ffe3f9a80d3ec3fa1130168c2a9b8485706a023c1ca029a88491ec794
   name: thanos
-- image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-0-4-rhel9@sha256:f9d1e09239b2578587ac8a6c00f67be0c66652146db33f90bff79cafdebeebaf
+- image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-0-4-rhel9@sha256:a17995da1531f1416b021d81da74af4bbb38169196bb90849a3d6b1ebe896414
   name: ui-troubleshooting
 schema: olm.bundle
