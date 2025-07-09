@@ -7,21 +7,14 @@ jobs:
     name: Verify generated code
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Log in to registry.redhat.io
+        shell: bash
         env:
           RH_REGISTRY_USERNAME: ${{ secrets.RH_REGISTRY_USERNAME }}
           RH_REGISTRY_PASSWORD: ${{ secrets.RH_REGISTRY_PASSWORD }}
         run: |
-          if [ -v "RH_REGISTRY_USERNAME" ] && [ -v "RH_REGISTRY_PASSWORD" ]
-          then
-            set +x
-            echo "$RH_REGISTRY_PASSWORD" | podman login "registry.redhat.io" --username "$RH_REGISTRY_USERNAME" --password-stdin
-            set -x
-          else
-            echo "Login to registry before running this script"
-            exit 1
-          fi
-      - uses: actions/checkout@v4
+          echo "$RH_REGISTRY_PASSWORD" | docker login --username "$RH_REGISTRY_USERNAME" --password-stdin registry.redhat.io
       - run: make --always-make generate && git diff --exit-code
   lint:
     name: Run linters
