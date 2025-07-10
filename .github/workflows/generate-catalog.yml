@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - './hack/update-catalog.sh'
+      - 'hack/update-catalog.sh'
 
 jobs:
   update-catalog:
