@@ -32,11 +32,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           title: "Generate FBC catalogs"
-          body: "Update the catalogs to the latest bundle sha"
+          body: "Update the catalogs to the latest bundle sha propsed in ${{ github.event.pull_request.head.ref }}."
           branch: "actions/generate-catalog"
           path: "catalog/"
           commit-message: "chore: generate catalog for bundle"
-          author: "Github actions"
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
           # labels: label1, label2
           # assignees: user1, user2
           # reviewers: user1, user2
