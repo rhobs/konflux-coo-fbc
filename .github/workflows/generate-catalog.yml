@@ -28,8 +28,8 @@ jobs:
           make generate-catalog
 
       - uses: gr2m/create-or-update-pull-request-action@v1
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           title: "Generate FBC catalogs"
           body: "Update the catalogs to the latest bundle sha"
