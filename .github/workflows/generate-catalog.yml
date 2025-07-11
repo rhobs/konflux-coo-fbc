@@ -28,8 +28,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          title: "Generate FBC catalogs"
-          body: "Update the catalogs to bundle sha from ${{ github.event.push.after }}."
+          title: "Generate FBC catalogs (${GITHUB_SHA:0:7})"
+          body: "Update the catalogs to bundle sha from ${GITHUB_SHA} }}."
           branch: "actions/generate-catalog"
           path: "catalog/"
           commit-message: "chore: generate catalog for bundle"
