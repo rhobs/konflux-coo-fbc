@@ -11,7 +11,7 @@ do
         \"$dockerfile\".pathChanged())"
     echo "Processing file $file"
     yq -i '.metadata.annotations += {"pipelinesascode.tekton.dev/on-cel-expression": strenv(trigger)}' "$file"
-    if [[ "$component" != *"4-12"* ]]; then
+    if [[ "$component" != *"4-12"* && "$component" != *"4-13"* ]]; then
         yq -i '(.spec.params[] | select(.name == "build-platforms").value | select(length == 1)) += ["linux/arm64","linux/ppc64le","linux/s390x"]' "$file"
     fi
     yq -i 'with(.spec.params; select(all_c(.name != "build-source-image")) | . += [{"name": "build-source-image", "value": "true"}])' "$file"
