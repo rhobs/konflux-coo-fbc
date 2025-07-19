@@ -1612,12 +1612,12 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:4ce1f9eb222a8cfc871b398ad88193057bcb06d1cb4d489de6142a089a5f1499
-  name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:6427bcef998cc744a06dc483f2f117b721a1abfd40309abb576a373e42961b6d
   name: alertmanager
 - image: registry.redhat.io/cluster-observability-operator/cluster-health-analyzer-rhel9@sha256:7fa859bcb0fdb3f69c2e37a8186271ce5800c2a3d48980f94528d49c18e9d2b2
   name: cluster-health-analyzer
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:4ce1f9eb222a8cfc871b398ad88193057bcb06d1cb4d489de6142a089a5f1499
+  name: ""
 - image: registry.redhat.io/cluster-observability-operator/cluster-observability-rhel9-operator@sha256:10d448296a1785f1cbcc3e49b560c8a88dc5ac22816b4827d0e2c77e95aabfad
   name: cluster-observability-operator
 - image: registry.redhat.io/cluster-observability-operator/dashboards-console-plugin-0-4-rhel9@sha256:504c579d9b5d59a21f156f9314e554a1332e8b22a361a8315bd18e6e6d057bc8
@@ -1656,7 +1656,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:90dfaa0a012158b868f3bd43bcf59015b1d078bce96a2bb2beea5987479d2e06
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:fe20689d37441af2b9c0cdfafef9a64e54ef29aed6a866c12edf22ad30dd9ae2
 name: cluster-observability-operator.v1.2.2
 package: cluster-observability-operator
 properties:
@@ -1951,7 +1951,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:90dfaa0a012158b868f3bd43bcf59015b1d078bce96a2bb2beea5987479d2e06
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:fe20689d37441af2b9c0cdfafef9a64e54ef29aed6a866c12edf22ad30dd9ae2
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:c818be4297ec29e2347ad2a4cc4e827018a700244d0d4aa74b2606d0750288e0
   name: alertmanager
