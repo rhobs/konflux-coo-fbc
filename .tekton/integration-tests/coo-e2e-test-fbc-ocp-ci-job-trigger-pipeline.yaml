@@ -33,11 +33,11 @@ spec:
         resolver: git
         params:
           - name: url
-            value: https://github.com/konflux-ci/integration-examples
+            value: https://github.com/konflux-ci/tekton-integration-catalog
           - name: revision
             value: main
           - name: pathInRepo
-            value: tasks/test_metadata.yaml
+            value: tasks/test-metadata/0.3/test-metadata.yaml
       params:
         - name: SNAPSHOT
           value: $(params.SNAPSHOT)
@@ -55,7 +55,7 @@ spec:
         - name: OCP_CI_JOB_NAME
           value: $(params.ocp_ci_job_name)
         - name: FBC_FRAGMENT
-          value: "$(tasks.parse-metadata.results.component-container-image)"
+          value: "$(tasks.parse-metadata.results.container-image)"
         - name: MULTISTAGE_PARAM_OVERRIDE_KEY
           value: "$(params.multistage_param_override_key)"
       taskSpec:
@@ -148,8 +148,8 @@ spec:
                     echo "Job URL found: ${JOB_URL}"
                     break
                   else
-                    echo "Job URL not yet available, waiting 15 seconds..."
-                    sleep 15
+                    echo "Job URL not yet available, waiting 5 seconds..."
+                    sleep 5
                     ATTEMPT=$((ATTEMPT + 1))
                   fi
                 done
