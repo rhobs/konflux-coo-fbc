@@ -227,7 +227,7 @@ spec:
     - name: coo-e2e-tests
       description: Task to run tests from service repository
       runAfter:
-        - coo-install
+        - coo-upgrade-install
       params:
         - name: COO_TESTS_BRANCH
           value: $(params.coo_tests_branch)
