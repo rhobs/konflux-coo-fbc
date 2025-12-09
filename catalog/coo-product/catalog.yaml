@@ -1992,7 +1992,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:628c0698c0d594a05ffcd40b05184069698dfd3fe8ed9bf07324217a0af5a900
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:9e6c5d6a5b6d1866306cbf25acfc5a4b1465fb1d199608f687f774b9acbd4bf3
 name: cluster-observability-operator.v1.3.0
 package: cluster-observability-operator
 properties:
@@ -2299,7 +2299,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:628c0698c0d594a05ffcd40b05184069698dfd3fe8ed9bf07324217a0af5a900
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:9e6c5d6a5b6d1866306cbf25acfc5a4b1465fb1d199608f687f774b9acbd4bf3
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:347e621e836f57c633232dbbe8987eecfc8bc08106be51c8927b457ee4f5e075
   name: alertmanager
@@ -2329,7 +2329,7 @@ relatedImages:
   name: prometheus-operator-admission-webhook
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-operator-prometheus-config-reloader-rhel9@sha256:4822790d1c14789cacea80fafdb1916c4eeae0360199966a041227632007b8e5
   name: prometheus-config-reloader
-- image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:c2b6f1fa40df1217d98e2e5b79eedf46bb5842dd5940b1ad52da94816a7775e0
+- image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:6686c2ae808fb8aa99b7cfb3de8d967119d410270b7af3f89bdfbcde1ae2669d
   name: prometheus-operator
 - image: registry.redhat.io/cluster-observability-operator/perses-rhel9-operator@sha256:c83aecd83b902332955ab47b5a477119f0c69fa697cc0d6e6d526723bfacb150
   name: perses-operator
