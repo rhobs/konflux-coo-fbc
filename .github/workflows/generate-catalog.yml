@@ -23,22 +23,21 @@ jobs:
           username: ${{ secrets.RH_REGISTRY_USERNAME }}
           password: ${{ secrets.RH_REGISTRY_PASSWORD}}
 
+      - name: Get catalog sha
+        id: get-catalog-sha
+        run: |
+          echo "catalog-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | tr -d \")" >> GITHUB_OUTPUT
+          echo "catalog-short-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | cut -b -7 | tr -d \")" >> GITHUB_OUTPUT
+
       - name: Generate catalog
         run: |
           make generate-catalog
 
-      - uses: gr2m/create-or-update-pull-request-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8
         with:
-          title: "Generate file-based catalogs"
-          body: "Update the catalogs to bundle sha from ${{ github.sha }}."
+          commit-message: "chore: generate catalog for bundle ${{ steps.get-catalog-sha.outputs.catalog-short-sha }}"
+          title: "Generate file-based catalogs for bundle ${{ steps.get-catalog-sha.outputs.catalog-short-sha }}"
+          body: "Update the catalogs to bundle sha ${{ steps.get-catalog-sha.outputs.catalog-sha }}."
           branch: ${{ env.BRANCH }}
-          path: "catalog/"
-          commit-message: "chore: generate catalog for bundle"
-          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
-          # labels: label1, label2
-          # assignees: user1, user2
-          # reviewers: user1, user2
-          # team_reviewers: team1, team2
-          update-pull-request-title-and-body: true
+          token: ${{ secrets.GITHUB_TOKEN }}
