@@ -50,6 +50,6 @@ entries:
     schema: olm.bundle
   - image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:04d900c45998f21ccf96af1ba6b8c7485d13c676ca365d70b491f7dcc48974ac
     schema: olm.bundle
-  - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:a3b8e1f3f8d154095f365ccbb163f2cf3852d6091b1f74773a8b5a2ee5c1cee6
+  - image: quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:ec01fc872640033d146c79d2fec8904318973646454d4f001255d8d138b9d0ee
     schema: olm.bundle
 schema: olm.template.basic
