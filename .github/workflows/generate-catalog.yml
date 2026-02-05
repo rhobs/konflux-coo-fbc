@@ -26,8 +26,8 @@ jobs:
       - name: Get catalog sha
         id: get-catalog-sha
         run: |
-          echo "catalog-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | tr -d \")" >> GITHUB_OUTPUT
-          echo "catalog-short-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | cut -b -7 | tr -d \")" >> GITHUB_OUTPUT
+          echo "catalog-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | tr -d \")" >> "$GITHUB_OUTPUT"
+          echo "catalog-short-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | cut -b -7 | tr -d \")" >> "$GITHUB_OUTPUT"
 
       - name: Generate catalog
         run: |
