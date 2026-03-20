@@ -1,5 +1,5 @@
 #!/bin/bash
 
-LATEST="quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:0415e8263a185c51897bcd5d3ac2f5fe68e4818282a2f9dc89f215ee3b9dd1ed"
+LATEST="quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:bec2bf6d8022edad18042eb530e4b0e8a260f7b9f08a75ec11457a5615044ae3"
 
 VALUE="$LATEST" yq -i '.entries[-1].image=strenv(VALUE)' catalog/catalog-template.yaml
