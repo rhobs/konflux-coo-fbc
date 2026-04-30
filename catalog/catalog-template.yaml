@@ -37,7 +37,41 @@ entries:
       - name: cluster-observability-operator.v1.5.0
         skipRange: '>=0.1.0 <1.5.0'
         replaces: cluster-observability-operator.v1.4.0
-    # for future entries add replace directives so that older entries don't get 
+    # for future entries add replace directives so that older entries don't get
+    # deleted. See https://olm.operatorframework.io/docs/concepts/olm-architecture/operator-catalog/creating-an-update-graph/#skiprange
+    name: fast
+    package: cluster-observability-operator
+    schema: olm.channel
+  - entries:
+      - name: cluster-observability-operator.v1.0.0
+      - name: cluster-observability-operator.v1.1.0
+        skipRange: '>=0.1.0 <1.1.0'
+        replaces: cluster-observability-operator.v1.0.0
+      - name: cluster-observability-operator.v1.1.1
+        skipRange: '>=0.1.0 <1.1.1'
+        replaces: cluster-observability-operator.v1.1.0
+      - name: cluster-observability-operator.v1.2.0
+        skipRange: '>=0.1.0 <1.2.0'
+        replaces: cluster-observability-operator.v1.1.1
+      - name: cluster-observability-operator.v1.2.1
+        skipRange: '>=0.1.0 <1.2.1'
+        replaces: cluster-observability-operator.v1.2.0
+      - name: cluster-observability-operator.v1.2.2
+        skipRange: '>=0.1.0 <1.2.2'
+        replaces: cluster-observability-operator.v1.2.1
+      - name: cluster-observability-operator.v1.3.0
+        skipRange: '>=0.1.0 <1.3.0'
+        replaces: cluster-observability-operator.v1.2.2
+      - name: cluster-observability-operator.v1.3.1
+        skipRange: '>=0.1.0 <1.3.1'
+        replaces: cluster-observability-operator.v1.3.0
+      - name: cluster-observability-operator.v1.4.0
+        skipRange: '>=0.1.0 <1.4.0'
+        replaces: cluster-observability-operator.v1.3.1
+      - name: cluster-observability-operator.v1.5.0
+        skipRange: '>=0.1.0 <1.5.0'
+        replaces: cluster-observability-operator.v1.4.0
+    # for future entries add replace directives so that older entries don't get
     # deleted. See https://olm.operatorframework.io/docs/concepts/olm-architecture/operator-catalog/creating-an-update-graph/#skiprange
     name: stable
     package: cluster-observability-operator
