@@ -1,0 +1,41 @@
+# Channel configuration for the cluster-observability-operator FBC catalogs.
+#
+# This repo produces two OLM channels:
+#
+#   fast   – always ships the latest bundle across ALL OCP versions.
+#            No configuration needed here; the fast channel head is
+#            always the newest entry in catalog/catalog-template.yaml.
+#
+#   stable – ships a curated bundle version per OCP version (or range).
+#            Controlled by the mapping below.
+#
+# Workflow:
+#
+#   1. A new bundle is added via hack/add-bundle-version.sh.
+#      It lands in BOTH channels inside the template, but only "fast"
+#      users see it immediately — because generate-catalogs.sh truncates
+#      the stable channel to the head configured here.
+#
+#   2. To promote a bundle to stable for certain OCP versions, update
+#      the "head" below and regenerate:
+#
+#        # Before: all OCP versions on v1.4.0
+#        stable:
+#          - versions: ["4.12", ..., "4.22"]
+#            head: cluster-observability-operator.v1.4.0
+#
+#        # After: pin older OCPs to v1.4.0, promote v1.5.0 for 4.18+
+#        stable:
+#          - versions: ["4.12", "4.13", "4.14", "4.15", "4.16", "4.17"]
+#            head: cluster-observability-operator.v1.4.0
+#          - versions: ["4.18", "4.19", "4.20", "4.21", "4.22"]
+#            head: cluster-observability-operator.v1.5.0
+#
+#   3. Run `make generate-catalog` to render per-OCP catalogs.
+#
+# Every OCP version listed in generate-catalogs.sh must appear in exactly
+# one entry below, otherwise generation will fail.
+
+stable:
+  - versions: ["4.12", "4.13", "4.14", "4.15", "4.16", "4.17", "4.18", "4.19", "4.20", "4.21", "4.22"]
+    head: cluster-observability-operator.v1.4.0
