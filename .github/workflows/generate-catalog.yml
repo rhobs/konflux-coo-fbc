@@ -5,7 +5,10 @@ on:
     branches:
       - main
     paths:
-      - 'hack/update-catalog.sh'
+      - 'hack/update-bundle-*.sh'
+      - 'hack/generate-catalogs.sh'
+      - 'config/channels.yaml'
+      - 'catalog/catalog-template.yaml'
 
 env:
   BRANCH: actions/generate-catalog
@@ -23,11 +26,10 @@ jobs:
           username: ${{ secrets.RH_REGISTRY_USERNAME }}
           password: ${{ secrets.RH_REGISTRY_PASSWORD}}
 
-      - name: Get catalog sha
-        id: get-catalog-sha
+      - name: Get commit info
+        id: get-commit-info
         run: |
-          echo "catalog-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | tr -d \")" >> "$GITHUB_OUTPUT"
-          echo "catalog-short-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | cut -b -7 | tr -d \")" >> "$GITHUB_OUTPUT"
+          echo "short-sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Generate catalog
         run: |
@@ -36,8 +38,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
-          commit-message: "chore: generate catalog for bundle ${{ steps.get-catalog-sha.outputs.catalog-short-sha }}"
-          title: "Generate file-based catalogs for bundle ${{ steps.get-catalog-sha.outputs.catalog-short-sha }}"
-          body: "Update the catalogs to bundle sha ${{ steps.get-catalog-sha.outputs.catalog-sha }}."
+          commit-message: "chore: generate catalogs for ${{ steps.get-commit-info.outputs.short-sha }}"
+          title: "Generate file-based catalogs for ${{ steps.get-commit-info.outputs.short-sha }}"
+          body: "Regenerate catalogs from commit ${{ github.sha }}."
           branch: ${{ env.BRANCH }}
           token: ${{ secrets.GITHUB_TOKEN }}
