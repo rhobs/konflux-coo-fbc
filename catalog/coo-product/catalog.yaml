@@ -3203,7 +3203,7 @@ properties:
 - type: olm.package
   value:
     packageName: cluster-observability-operator
-    version: 1.4.0
+    version: 1.5.0
 - type: olm.csv.metadata
   value:
     annotations:
