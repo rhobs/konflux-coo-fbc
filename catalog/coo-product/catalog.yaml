@@ -3091,7 +3091,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:1b758d6c60440e1242e85344fbd16c821cca116e417a9388bc57a8f64f513168
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:95d1e727da80c453fcb57aac49e95aa25f37fa3751502e0c8be0f1f7410b095b
 name: cluster-observability-operator.v1.5.0
 package: cluster-observability-operator
 properties:
@@ -3433,7 +3433,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:1b758d6c60440e1242e85344fbd16c821cca116e417a9388bc57a8f64f513168
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:95d1e727da80c453fcb57aac49e95aa25f37fa3751502e0c8be0f1f7410b095b
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:459245b257ad4d90ef523b82f6c3a43a45a03e0f591fa8f641f350f143eaeaa0
   name: alertmanager
@@ -3459,7 +3459,7 @@ relatedImages:
   name: ui-logging-pf5
 - image: registry.redhat.io/cluster-observability-operator/logging-console-plugin-rhel9@sha256:bd63aa0524ae3d7c0531fcefd1cdf498e57da59ccf497a8e8c52969d43b48738
   name: ui-logging
-- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-pf5-rhel9@sha256:613c516a2a113e66fe6d31eae06b02dd120f1264c18e49f445bd022b81f07887
+- image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-pf5-rhel9@sha256:6f8ac2614a4731f201a26eef658df7a136fa74a6d623ccc67e337fa2d36344a5
   name: ui-monitoring-pf5
 - image: registry.redhat.io/cluster-observability-operator/monitoring-console-plugin-pf6-rhel9@sha256:d59f6c30dd210ba649ec9a0243fa86d59c8b30785d025de37da853e6a0f6c447
   name: ui-monitoring-pf6
@@ -3471,7 +3471,7 @@ relatedImages:
   name: prometheus-config-reloader
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:fd6effb5373fa7badac2965f5b7f22a6af642fbecac554ecaf395cc0875e63bc
   name: prometheus-operator
-- image: registry.redhat.io/cluster-observability-operator/perses-rhel9-operator@sha256:65c3cc680232bf0363c9d79d590dcb8794fa8506d1fa9b10c5f4243b8880c216
+- image: registry.redhat.io/cluster-observability-operator/perses-rhel9-operator@sha256:1a6113b668ff5d1755a4e189c38247eed192ccb20a76d8f25563e0c007571d50
   name: perses-operator
 - image: registry.redhat.io/cluster-observability-operator/perses-rhel9@sha256:a0e997c06688d64f0ae8bd1d27f42abf44a6e81b7bdec4ae7e6776afd908373c
   name: perses
