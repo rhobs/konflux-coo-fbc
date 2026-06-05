@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'hack/update-catalog.sh'
+      - 'hack/update-bundle-*.sh'
 
 env:
   BRANCH: actions/generate-catalog
@@ -25,9 +25,11 @@ jobs:
 
       - name: Get catalog sha
         id: get-catalog-sha
+        # Assumes only one update-bundle-*.sh file changes per commit; uses the first match.
         run: |
-          echo "catalog-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | tr -d \")" >> "$GITHUB_OUTPUT"
-          echo "catalog-short-sha=$(grep bundle@sha256 hack/update-catalog.sh | cut -d ':' -f 2- | cut -b -7 | tr -d \")" >> "$GITHUB_OUTPUT"
+          changed_file=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} -- 'hack/update-bundle-*.sh' | head -1)
+          echo "catalog-sha=$(grep 'bundle@sha256' "$changed_file" | cut -d ':' -f 2- | tr -d '"')" >> "$GITHUB_OUTPUT"
+          echo "catalog-short-sha=$(grep 'bundle@sha256' "$changed_file" | cut -d ':' -f 2- | cut -b -7 | tr -d '"')" >> "$GITHUB_OUTPUT"
 
       - name: Generate catalog
         run: |
