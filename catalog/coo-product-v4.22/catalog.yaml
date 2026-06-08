@@ -3124,7 +3124,7 @@ relatedImages:
   name: ui-troubleshooting
 schema: olm.bundle
 ---
-image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:5aefb4e0fa0e9aff43536ca39586b3734f809790bed9fe796d09c357bf0555ce
+image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:bc5d9a8b0faa568698aff896cf5210e924b4c9a2615331e9972071e4a6c4a5ab
 name: cluster-observability-operator.v1.5.0
 package: cluster-observability-operator
 properties:
@@ -3466,7 +3466,7 @@ properties:
     provider:
       name: Red Hat
 relatedImages:
-- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:5aefb4e0fa0e9aff43536ca39586b3734f809790bed9fe796d09c357bf0555ce
+- image: registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle@sha256:bc5d9a8b0faa568698aff896cf5210e924b4c9a2615331e9972071e4a6c4a5ab
   name: ""
 - image: registry.redhat.io/cluster-observability-operator/alertmanager-rhel9@sha256:bf077c3319a69516d9fb0d988c8e7d174e7a213787b4064ea1a69e1efe8f48ad
   name: alertmanager
@@ -3504,7 +3504,7 @@ relatedImages:
   name: prometheus-config-reloader
 - image: registry.redhat.io/cluster-observability-operator/obo-prometheus-rhel9-operator@sha256:36e58c9559adb5db6eaccf86c103700e8ae6b7207f6467b744ccd4a647522cfb
   name: prometheus-operator
-- image: registry.redhat.io/cluster-observability-operator/perses-rhel9-operator@sha256:031e4b9de3fc6be1c7decc3e1107e6ac68c3961c8da8af31b30d14cbcc809219
+- image: registry.redhat.io/cluster-observability-operator/perses-rhel9-operator@sha256:815dd0fd64ed7d51e41045f7e03bf1abe5f6943a10e616f8d8111a17c506e17d
   name: perses-operator
 - image: registry.redhat.io/cluster-observability-operator/perses-rhel9@sha256:0519cbab0bca3e2afb908d4167b55af81d63c5876da8c90237e6c8a99d90ebd1
   name: perses
@@ -3514,6 +3514,6 @@ relatedImages:
   name: thanos
 - image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-pf6-rhel9@sha256:c88b93da6710f8aefb7c7e21f8a6f90d7ae9a33661fa15db9818107b51527a2b
   name: ui-troubleshooting-pf6
-- image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-rhel9@sha256:63ddb4ca194e6888fe643f28c97eca199dbb8427fea75bb958b9807f1fafe90e
+- image: registry.redhat.io/cluster-observability-operator/troubleshooting-panel-console-plugin-rhel9@sha256:1df26ff5649a189687c001b74b609ba73b7c028580f041c52f9e8350172539e8
   name: ui-troubleshooting
 schema: olm.bundle
