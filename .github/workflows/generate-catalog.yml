@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'hack/update-bundle-*.sh'
+      - 'hack/update-catalogs-*.sh'
 
 env:
   BRANCH: actions/generate-catalog
