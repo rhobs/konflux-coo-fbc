@@ -47,7 +47,7 @@ get_stable_head() {
 
 inject_bundle_digests() {
     local template="$1"
-    for update_script in "$SCRIPT_DIR"/update-bundle-*.sh; do
+    for update_script in "$SCRIPT_DIR"/update-catalogs-*.sh; do
         [[ -f "$update_script" ]] || continue
 
         BUNDLE_VERSION=""
@@ -75,7 +75,7 @@ inject_bundle_digests() {
                 break
             fi
             index=$((index + 1))
-        done <<< "$channel_entries"
+        done <<<"$channel_entries"
 
         if [[ "$found" == "true" ]]; then
             local bundle_entry_offset
@@ -106,7 +106,7 @@ truncate_stable_channel() {
         if [[ "$entry_name" == "$stable_head" ]]; then
             break
         fi
-    done <<< "$channel_entries"
+    done <<<"$channel_entries"
 
     if [[ "$keep_count" -eq 0 ]]; then
         echo "Error: stable head $stable_head not found in stable channel entries"
@@ -146,7 +146,7 @@ for V in "${OCP_VERSIONS[@]}"; do
     fi
 
     # shellcheck disable=SC2086
-    $OPM alpha render-template basic --output yaml $MIGRATE_FLAG "$OCP_TEMPLATE" > "$OUTPUT_DIR/catalog.yaml"
+    $OPM alpha render-template basic --output yaml $MIGRATE_FLAG "$OCP_TEMPLATE" >"$OUTPUT_DIR/catalog.yaml"
 
     sed -i "s|${QUAY_REF}|${PROD_REF}|g" "$OUTPUT_DIR/catalog.yaml"
 
