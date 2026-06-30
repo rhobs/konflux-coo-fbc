@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'hack/update-catalogs-*.sh'
+      - "hack/update-catalogs-*.sh"
 
 env:
   BRANCH: actions/generate-catalog
@@ -25,7 +25,7 @@ jobs:
 
       - name: Get catalog sha
         id: get-catalog-sha
-        # Assumes only one update-bundle-*.sh file changes per commit; uses the first match.
+        # Assumes only one update-catalogs-*.sh file changes per commit; uses the first match.
         run: |
           changed_file=$(git log -1 --pretty=format:'' --name-only | grep 'hack/update-catalogs-.*\.sh' | head -1)
           echo "catalog-sha=$(grep 'bundle@sha256' "$changed_file" | cut -d ':' -f 2- | tr -d '"')" >> "$GITHUB_OUTPUT"

@@ -3,7 +3,7 @@
 #
 # This script automates all the steps needed when a new bundle version
 # is released:
-#   1. Creates hack/update-bundle-<version>.sh (the digest data file)
+#   1. Creates hack/update-catalogs-<version>.sh (the digest data file)
 #   2. Adds the version to both fast and stable channels in the template
 #      (with replaces + skipRange wired to the previous head)
 #   3. Adds the olm.bundle image entry to the template
@@ -51,7 +51,7 @@ fi
 VERSION="$1"
 IMAGE_REF="$2"
 BUNDLE_NAME="cluster-observability-operator.v${VERSION}"
-UPDATE_SCRIPT="$SCRIPT_DIR/update-bundle-${VERSION}.sh"
+UPDATE_SCRIPT="$SCRIPT_DIR/update-catalogs-${VERSION}.sh"
 
 if [[ -f "$UPDATE_SCRIPT" ]]; then
     echo "Error: update script already exists: $UPDATE_SCRIPT"
@@ -90,7 +90,7 @@ yq eval -i '
     .entries += [{"image": "'"$IMAGE_REF"'", "schema": "olm.bundle"}]
 ' "$TEMPLATE"
 
-cat > "$UPDATE_SCRIPT" <<EOF
+cat >"$UPDATE_SCRIPT" <<EOF
 #!/bin/bash
 # Bundle digest for operator version ${VERSION}.
 #
