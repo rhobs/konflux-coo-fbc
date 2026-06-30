@@ -2,7 +2,7 @@
 # Generate per-OCP-version FBC catalogs from the catalog template.
 #
 # This script is the core of the catalog build. It:
-#   1. Sources all hack/update-bundle-*.sh files to get bundle digests
+#   1. Sources all hack/update-catalogs-*.sh files to get bundle digests
 #   2. Injects those digests into the template
 #   3. For each OCP version, truncates the stable channel to the head
 #      configured in config/channels.yaml
@@ -78,11 +78,10 @@ inject_bundle_digests() {
         done <<<"$channel_entries"
 
         if [[ "$found" == "true" ]]; then
-            local bundle_entry_offset
-            bundle_entry_offset=$(yq eval '
-                [.entries[] | select(.schema == "olm.channel" or .schema == "olm.package")] | length
+            local absolute_index
+            absolute_index=$(INDEX=$index yq eval '
+                [.entries | to_entries[] | select(.value.schema == "olm.bundle") | .key] | .[env(INDEX) | tonumber]
             ' "$template")
-            local absolute_index=$((bundle_entry_offset + index))
             VALUE="$LATEST" yq eval -i ".entries[$absolute_index].image = strenv(VALUE)" "$template"
         else
             echo "Warning: bundle $bundle_name not found in channel entries, skipping digest injection"
