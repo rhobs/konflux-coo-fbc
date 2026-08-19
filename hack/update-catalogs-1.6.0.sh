@@ -1,5 +1,5 @@
 #!/bin/bash
-# Bundle digest for operator version 1.5.0.
+# Bundle digest for operator version 1.6.0.
 #
 # This file is a data source, not meant to be executed directly.
 # It is sourced by hack/generate-catalogs.sh during catalog generation.
@@ -8,5 +8,5 @@
 #   edit the LATEST= line below, then push to main.
 #   The GitHub Actions workflow will regenerate catalogs automatically.
 
-BUNDLE_VERSION="1.5.0"
-LATEST="quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:425b2b4a4052ead84bc74254971b6d8e0f5ecb5ade3adccce576495254de5a84"
+BUNDLE_VERSION="1.6.0"
+LATEST="quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:34d61ce8379e39ac1445ff89a60696c2492ffde603937ea7f2c9e736bca625de"
