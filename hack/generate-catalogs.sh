@@ -27,7 +27,7 @@ CONFIG="$REPO_ROOT/config/channels.yaml"
 TEMPLATE="$REPO_ROOT/catalog/catalog-template.yaml"
 OPM="${OPM:-${REPO_ROOT}/.tmp/bin/opm}"
 
-OCP_VERSIONS=(4.12 4.13 4.14 4.15 4.16 4.17 4.18 4.19 4.20 4.21 4.22)
+OCP_VERSIONS=(4.12 4.13 4.14 4.15 4.16 4.17 4.18 4.19 4.20 4.21 4.22 5.0)
 
 QUAY_REF="quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle"
 PROD_REF="registry.redhat.io/cluster-observability-operator/cluster-observability-operator-bundle"
