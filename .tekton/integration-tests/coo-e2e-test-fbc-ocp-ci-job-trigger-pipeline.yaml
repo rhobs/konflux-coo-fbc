@@ -112,12 +112,14 @@ spec:
               POLL_RETRY_DELAY=${POLL_RETRY_DELAY:-5}
 
               # curl options shared by all requests:
-              #  --retry/--retry-connrefused/--retry-all-errors handle low level
-              #  network transients; we still layer application level retries on top
-              #  to handle valid HTTP responses that lack the expected fields.
+              #  --retry/--retry-connrefused handle low level network transients;
+              #  we still layer application level retries on top to handle valid
+              #  HTTP responses that lack the expected fields.
+              #  Note: --retry-all-errors is intentionally omitted because the
+              #  curl shipped in ose-cli is too old to support it.
               CURL_COMMON=(--silent --show-error --location
                 --connect-timeout 15 --max-time 60
-                --retry 3 --retry-delay 3 --retry-connrefused --retry-all-errors)
+                --retry 3 --retry-delay 3 --retry-connrefused)
 
               echo "Create the JSON payload dynamically with the configurable key"
               JSON_PAYLOAD=$(jq -n \
