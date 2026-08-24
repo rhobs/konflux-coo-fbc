@@ -9,4 +9,4 @@
 #   The GitHub Actions workflow will regenerate catalogs automatically.
 
 BUNDLE_VERSION="1.5.2"
-LATEST="quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:0bc7e973ebb7bf95b5d8a1f7d800219a002350a2022a778c4ab5d7cb4e29b58c"
+LATEST="quay.io/redhat-user-workloads/cluster-observabilit-tenant/cluster-observability-operator/cluster-observability-operator-bundle@sha256:0cad504e59f0bb57865bcbf2df0d93a23b73bf2af77ea8e7c1fd7d2ed666a313"
