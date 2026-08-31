@@ -37,7 +37,8 @@ needs_migrate() {
     local major minor
     major=$(echo "$version" | cut -d. -f1)
     minor=$(echo "$version" | cut -d. -f2)
-    [[ "$major" -eq 4 && "$minor" -ge 17 ]]
+    # olm.csv.metadata is required for OCP >= 4.17 (and all >= 5.x).
+    [[ "$major" -gt 4 || ( "$major" -eq 4 && "$minor" -ge 17 ) ]]
 }
 
 get_stable_head() {
